@@ -4,5 +4,8 @@
 
     $page = $_GET['page'];
 
+    include  'controller.php';
+
     include 'layout.php';
+
 
