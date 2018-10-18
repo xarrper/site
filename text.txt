@@ -1,0 +1,37 @@
+theme, layout, router.
+
+1.
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+
+file_exists();
+header("HTTP/1.0 404 Not found");
+
+include '';
+
+for ($i = 0; $i < count($news); $i++) {
+$news[$i]['theme']
+
+2. MySQL
+
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$dbName = 'test';
+-------
+$link = mysqli_connect($host, $user, $password, $dbName);
+mysqli_query($link, "SET NAMES 'utf8'");
+
+$query = "SELECT * FROM `user` WHERE `id` = 1";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+$user = mysqli_fetch_assoc($result);
+-------
+$link = mysqli_connect($host, $user, $password, $dbName);
+mysqli_query($link, "SET NAMES 'utf8'");
+$query = "SELECT * FROM `news`";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+	
+$news = [];
+while ($row = mysqli_fetch_assoc($result)) {
+	$news[] = $row;
+}
