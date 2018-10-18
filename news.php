@@ -1,24 +1,35 @@
+<?php
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$dbName = 'site';
 
-			<div class="card">
-				<div class="card-header">
-					Кино
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Бузова раскрыла правду о победителе шоу «Замуж за Бузову»</h5>
-					<p class="card-text">С момента выхода в эфир ТНТ последней серии шоу «Замуж за Бузову», 
-						в которой Ольга Бузова остановила свой выбор на бизнесмене из Суздаля Денисе Лебедеве, 
-						пользователи соцсетей активно обсуждали победителя проекта.</p>
-				</div>
-			</div>
-			<br>
-			<div class="card">
-				<div class="card-header">
-					Авто
-				</div>
-				<div class="card-body">
-					<h5 class="card-title">Как надо крепить автомобильный номер</h5>
-					<p class="card-text">Чаще всего водителям не надо задумываться над этим вопросом, 
-						так как у автомобилей для этого обычно есть штатные места 
-						(нередко машины продаются уже с пластиковыми рамками для номеров).</p>
-				</div>
-			</div>
+$link = mysqli_connect($host, $user, $password, $dbName);
+mysqli_query($link, "SET NAMES 'utf8'");
+
+$query = "SELECT * FROM `news`";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+$user = mysqli_fetch_assoc($result);
+
+$query = "SELECT * FROM `news`";
+$result = mysqli_query($link, $query) or die(mysqli_error($link));
+$news = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $news[] = $row;
+}
+?>
+<?php
+for($i = 0; $i < count($news); $i++) {
+    ?>
+    <div class="card">
+        <div class="card-header">
+            <?=$news[$i]['theme']?>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><?=$news[$i]['title']?></h5>
+            <p class="card-text"><?=$news[$i]['text']?></p>
+        </div>
+    </div>
+    <?php
+}
+    ?>
