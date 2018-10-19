@@ -1,14 +1,17 @@
 body {
-	padding-top: 5rem;
+    padding-top: 5rem;
 }
+
 .starter-template {
-	padding: 3rem 1.5rem;
-	text-align: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
 }
+
 .contact-info {
-	color: #545454;
+    color: #545454;
     font-size: 14px;
 }
-.img-profil {
-	border: solid 2px #545454;
+
+.img-profile {
+    border: solid 2px #545454;
 }
