@@ -24,7 +24,7 @@
 
 <main role="main" class="container">
     <?php
-    include $page . '.php';
+    include $page . '.php'; // подключение контента в зависимости от страницы
     ?>
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
